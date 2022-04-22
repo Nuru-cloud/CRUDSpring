@@ -16,8 +16,11 @@ import java.util.stream.Stream;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
     private ProductRepo productRepo;
+
+    public ProductServiceImpl(ProductRepo productRepo) {
+        this.productRepo = productRepo;
+    }
 
     @Override
     public Product saveProduct(Product product) {
